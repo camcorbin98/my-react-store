@@ -1,26 +1,27 @@
 
 const catalog = [
     {
-        "title": "Oranges",
-        "category": "fruit",
+        "title": "Chocolate",
+        "category": "candy",
         "price": 15,
-        "image": "placeholder",
+        "image": "choco.png",
         "_id": "1"
     },
     {
-        "title": "Banana",
-        "category": "fruit",
+        "title": "Hoodie",
+        "category": "merchandise",
         "price": 15,
-        "image": "placeholder",
+        "image": "hoodie.png",
         "_id": "2"
     },
     {
-        "title": "Chocolate",
-        "category": "fruit",
+        "title": "Milk",
+        "category": "dairy",
         "price": 15,
-        "image": "placeholder",
+        "image": "milk.png",
         "_id": "3"
     },
+
 ]
 
 class DataService {
