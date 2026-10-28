@@ -1,18 +1,36 @@
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-import './App.css'
-import Navbar from './components/navbar'
-import Catalog from './pages/Catalog'
-import "bootstrap/dist/css/bootstrap.min.css"
-import Footer from './components/Footer'
+import Home from './pages/Home';
+
+import About from './pages/about';
+import Catalog from './pages/Catalog';
+import Contact from './pages/Contact';
+import NotFound from './pages/NotFound';
+
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+
+import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 function App() {
     return (
-        <div>
-            <h1>Hello from react!</h1>
+        <BrowserRouter>
+            
             <Navbar />
-            <Catalog />
+
+            <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/contact" element={<Contact />} />
+                <Route path="/catalog" element={<Catalog />} />
+                <Route path="*" element={<NotFound />} />
+            
+            </Routes>
+            
             <Footer />
-        </div>
+        </BrowserRouter>
     )
 }
 

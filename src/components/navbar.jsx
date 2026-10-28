@@ -1,22 +1,46 @@
 
 import "./navbar.css";
 import { useState } from "react";
+import { NavLink } from "react-router-dom";
 
 function Navbar() {
 
     const [menuOpen, setMenuOpen] = useState(false);
 
+    // TOGGLE MOBILE MENU
+
     function toggleMenu() {
         setMenuOpen(!menuOpen);
     }
 
+    // CLOSE MOBILE MENU
+
+    function closeMenu() {
+        setMenuOpen(false);
+    }
+
+    // HIGHLIGHT ACTIVE PAGE
+
+    function getLinkClass({ isActive }) {
+        return isActive ? "nav-link active fw-bold" : "nav-link";
+    }
+
     return (
-        <nav className="navbar navbar-expand-md bg-light border-bottom">
+        <nav className="navbar navbar-expand-md store-navbar">
+
             <div className="container-fluid">
 
-                <a className="navbar-brand" href="#">
+                {/* STORE BRAND */}
+
+                <NavLink
+                    className="navbar-brand"
+                    to="/"
+                    onClick={closeMenu}
+                >
                     My React Store
-                </a>
+                </NavLink>
+
+                {/* MOBILE MENU BUTTON */}
 
                 <button
                     className="navbar-toggler"
@@ -29,39 +53,73 @@ function Navbar() {
                     <span className="navbar-toggler-icon"></span>
                 </button>
 
+                {/* NAVIGATION LINKS */}
+
                 <div
                     className={`collapse navbar-collapse ${menuOpen ? "show" : ""}`}
                     id="navbarMenu"
                 >
-                    <ul className="navbar-nav me-auto mb-2 mb-md-0">
+                    <ul className="navbar-nav ms-auto">
+
+                        {/* HOME */}
 
                         <li className="nav-item">
-                            <a
-                                className="nav-link active"
-                                href="#"
-                                onClick={() => setMenuOpen(false)}
+                            <NavLink
+                                to="/"
+                                end
+                                className={getLinkClass}
+                                onClick={closeMenu}
                             >
                                 Home
-                            </a>
+                            </NavLink>
                         </li>
 
+                        {/* CATALOG */}
+
                         <li className="nav-item">
-                            <a
-                                className="nav-link"
-                                href="#catalog"
-                                onClick={() => setMenuOpen(false)}
+                            <NavLink
+                                to="/catalog"
+                                className={getLinkClass}
+                                onClick={closeMenu}
                             >
-                                Products
-                            </a>
+                                Catalog
+                            </NavLink>
+                        </li>
+
+                        {/* ABOUT */}
+
+                        <li className="nav-item">
+                            <NavLink
+                                to="/about"
+                                className={getLinkClass}
+                                onClick={closeMenu}
+                            >
+                                About
+                            </NavLink>
+                        </li>
+
+                        {/* CONTACT */}
+
+                        <li className="nav-item">
+                            <NavLink
+                                to="/contact"
+                                className={getLinkClass}
+                                onClick={closeMenu}
+                            >
+                                Contact
+                            </NavLink>
                         </li>
 
                     </ul>
                 </div>
 
             </div>
+
         </nav>
     );
 }
 
 export default Navbar;
+
+
 

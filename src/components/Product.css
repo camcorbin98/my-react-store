@@ -3,91 +3,140 @@
 
 .product {
     background-color: white;
-    border: 1px solid #ddd;
-    border-radius: 12px;
-    padding: 20px;
+    border: 1px solid #e2e8f0;
+    border-radius: 18px;
+    padding: 25px;
     text-align: center;
     width: 100%;
-    max-width: 350px;
-    margin: 15px auto;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    height: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    box-shadow: 0 4px 15px rgba(20, 33, 61, 0.08);
+
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+/* PRODUCT HOVER EFFECT */
+
+.product:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(20, 33, 61, 0.15);
 }
 
 /* PRODUCT IMAGE */
 
 .product img {
-    width: 200px;
-    height: 200px;
-    max-width: 100%;
-    object-fit: cover;
-    border-radius: 8px;
+    width: 100%;
+    max-width: 220px;
+    height: 190px;
+    object-fit: contain;
+    background-color: #f8faff;
+    padding: 15px;
+    border-radius: 12px;
 }
 
 /* PRODUCT TITLE */
 
 .product h5 {
-    margin-top: 15px;
-    font-size: 20px;
-    font-weight: bold;
+    color: var(--store-navy);
+    font-size: 22px;
+    font-weight: 700;
+    margin-top: 20px;
+    margin-bottom: 15px;
 }
 
-/* PRICES */
+/* PRICE CONTAINER */
 
 .prices {
     display: flex;
     flex-direction: column;
-    gap: 8px;
-    margin: 15px 0;
-    font-size: 18px;
-    color: #333;
-}
-
-/* ADD TO CART BUTTON */
-
-.product .btn-primary {
-    margin-top: 15px;
+    gap: 10px;
     width: 100%;
-    padding: 10px;
+    margin: 10px 0;
+    padding: 15px 0;
+
+    border-top: 1px solid #edf0f5;
+    border-bottom: 1px solid #edf0f5;
+
+    font-size: 17px;
+    color: var(--store-text);
 }
 
-/* HOVER EFFECT */
+/* TOTAL PRICE */
 
-.product:hover {
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+.prices label:last-child {
+    color: var(--store-blue);
+    font-size: 20px;
+    font-weight: 700;
+}
+
+/* QUANTITY PICKER POSITION */
+
+.product .quantity-picker {
+    margin-top: auto;
+    margin-bottom: 0;
+    padding-top: 20px;
 }
 
 /* TABLET RESPONSIVENESS */
 
-@media (max-width: 800px) {
+@media (max-width: 900px) {
+
     .product {
-        max-width: 300px;
-        padding: 15px;
+        padding: 20px;
     }
 
     .product img {
-        width: 180px;
-        height: 180px;
+        max-width: 190px;
+        height: 170px;
+    }
+
+    .product h5 {
+        font-size: 20px;
     }
 }
 
 /* MOBILE RESPONSIVENESS */
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
+
     .product {
-        max-width: 100%;
-        padding: 15px;
+        padding: 20px;
     }
 
     .product img {
-        width: 160px;
-        height: 160px;
+        max-width: 200px;
+        height: 180px;
     }
 
     .product h5 {
-        font-size: 18px;
+        font-size: 20px;
     }
 
     .prices {
         font-size: 16px;
     }
+
+    .prices label:last-child {
+        font-size: 19px;
+    }
 }
+
+/* ACCESSIBILITY */
+
+@media (prefers-reduced-motion: reduce) {
+    .product {
+        transition: none;
+    }
+
+    .product:hover {
+        transform: none;
+    }
+}
+
