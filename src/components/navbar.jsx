@@ -110,6 +110,18 @@ function Navbar() {
                             </NavLink>
                         </li>
 
+                        {/* ADMIN */}
+
+                        <li className="nav-item">
+                            <NavLink
+                                to="/admin"
+                                className={getLinkClass}
+                                onClick={closeMenu}
+                            >
+                                Admin
+                            </NavLink>
+                        </li>
+
                     </ul>
                 </div>
 
@@ -120,6 +132,7 @@ function Navbar() {
 }
 
 export default Navbar;
+
 
 
 
