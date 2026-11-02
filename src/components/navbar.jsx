@@ -1,9 +1,17 @@
 
 import "./navbar.css";
-import { useState } from "react";
+
+import { useState, useContext } from "react";
 import { NavLink } from "react-router-dom";
+import GlobalContext from "../state/globalContext";
 
 function Navbar() {
+
+    // ACCESS GLOBAL STATE
+
+    const { user } = useContext(GlobalContext);
+
+    // MOBILE MENU STATE
 
     const [menuOpen, setMenuOpen] = useState(false);
 
@@ -59,6 +67,7 @@ function Navbar() {
                     className={`collapse navbar-collapse ${menuOpen ? "show" : ""}`}
                     id="navbarMenu"
                 >
+
                     <ul className="navbar-nav ms-auto">
 
                         {/* HOME */}
@@ -123,6 +132,13 @@ function Navbar() {
                         </li>
 
                     </ul>
+
+                    {/* USER NAME FROM GLOBAL STATE */}
+
+                    <span className="navbar-text ms-md-3 fw-semibold">
+                        Welcome, {user.name}!
+                    </span>
+
                 </div>
 
             </div>
@@ -132,6 +148,7 @@ function Navbar() {
 }
 
 export default Navbar;
+
 
 
 
