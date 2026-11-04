@@ -1,12 +1,11 @@
-
 import { Link } from "react-router-dom";
+import { IconCat, IconRocket } from "@tabler/icons-react";
 
 function NotFound() {
     return (
         <main className="container py-5">
 
             <div className="row justify-content-center">
-
                 <div className="col-md-8 col-lg-7">
 
                     <div className="bg-white rounded-4 shadow-sm text-center p-4 p-md-5">
@@ -43,17 +42,23 @@ function NotFound() {
 
                         <div className="d-flex justify-content-center flex-wrap gap-3">
 
+                            {/* RETURN HOME */}
+
                             <Link
                                 to="/"
-                                className="btn btn-primary btn-lg"
+                                className="btn btn-primary btn-lg d-flex align-items-center gap-2"
                             >
+                                <IconRocket size={24} />
                                 Return Home
                             </Link>
 
+                            {/* BROWSE CATALOG */}
+
                             <Link
                                 to="/catalog"
-                                className="btn btn-outline-primary btn-lg"
+                                className="btn btn-outline-primary btn-lg d-flex align-items-center gap-2"
                             >
+                                <IconCat size={24} />
                                 Browse Catalog
                             </Link>
 
@@ -62,7 +67,6 @@ function NotFound() {
                     </div>
 
                 </div>
-
             </div>
 
         </main>

@@ -7,12 +7,14 @@ function QuantityPicker({ quantity, onQuantityChange }) {
         if (quantity > 1) {
             let nextValue = quantity - 1;
             onQuantityChange(nextValue);
+            props.onChange(nextValue)
         }
     }
 
     function handleIncrease() {
         let nextValue = quantity + 1;
         onQuantityChange(nextValue);
+        props.onChange(nextValue)
     }
 
     return (

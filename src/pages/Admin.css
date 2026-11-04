@@ -1,0 +1,232 @@
+/* ========================================
+   ADMIN PAGE
+======================================== */
+
+.admin-page {
+    min-height: 80vh;
+
+    background: linear-gradient(
+        135deg,
+        #f1f5f9,
+        #e0f2fe
+    );
+
+    color: #1e293b;
+}
+
+/* ========================================
+   PAGE HEADINGS
+======================================== */
+
+.admin-page .admin-title {
+    color: #1d4ed8;
+    letter-spacing: -1px;
+}
+
+.admin-page .admin-heading {
+    color: #0f172a;
+}
+
+/* ========================================
+   PARAGRAPHS
+======================================== */
+
+.admin-page .admin-text {
+    color: #475569;
+
+    line-height: 1.8;
+    font-size: 1.05rem;
+}
+
+/* ========================================
+   FORM AND LIST PANELS
+======================================== */
+
+.admin-page .admin-panel {
+    background-color: #ffffff;
+    color: #1e293b;
+
+    border: 1px solid #e2e8f0;
+}
+
+/* ========================================
+   FORM LABELS
+======================================== */
+
+.admin-page .admin-label {
+    color: #1e293b;
+
+    font-weight: 600;
+    font-size: 0.95rem;
+
+    margin-bottom: 8px;
+}
+
+/* ========================================
+   FORM INPUTS
+======================================== */
+
+.admin-page .admin-input {
+    background-color: #ffffff;
+    color: #0f172a;
+
+    border: 1px solid #cbd5e1;
+    border-radius: 10px;
+
+    padding: 12px 15px;
+
+    font-size: 1rem;
+
+    transition: border-color 0.2s ease,
+                box-shadow 0.2s ease;
+}
+
+.admin-page .admin-input::placeholder {
+    color: #64748b;
+    opacity: 1;
+}
+
+.admin-page .admin-input:focus {
+    background-color: #ffffff;
+    color: #0f172a;
+
+    border-color: #2563eb;
+
+    box-shadow: 0 0 0 3px rgba(
+        37,
+        99,
+        235,
+        0.15
+    );
+
+    outline: none;
+}
+
+/* ========================================
+   SAVE BUTTONS
+======================================== */
+
+.admin-page .admin-button {
+    background-color: #2563eb;
+    color: #ffffff;
+
+    border: 2px solid #2563eb;
+    border-radius: 10px;
+
+    font-weight: 600;
+
+    padding: 12px 28px;
+
+    transition: all 0.2s ease;
+}
+
+.admin-page .admin-button:hover {
+    background-color: #1d4ed8;
+    border-color: #1d4ed8;
+
+    color: #ffffff;
+
+    transform: translateY(-2px);
+}
+
+/* ========================================
+   PRODUCT CARDS
+======================================== */
+
+.admin-page .admin-product-card {
+    background-color: #f8fafc;
+    color: #0f172a;
+
+    border: 1px solid #cbd5e1;
+
+    transition: transform 0.2s ease,
+                box-shadow 0.2s ease;
+}
+
+.admin-page .admin-product-card:hover {
+    transform: translateY(-3px);
+
+    box-shadow: 0 4px 12px rgba(
+        15,
+        23,
+        42,
+        0.1
+    );
+}
+
+/* ========================================
+   PRODUCT CATEGORY BADGE
+======================================== */
+
+.admin-page .admin-category-badge {
+    display: inline-block;
+
+    background-color: #dbeafe;
+    color: #1e40af;
+
+    font-size: 0.8rem;
+    font-weight: 600;
+
+    padding: 5px 12px;
+    border-radius: 20px;
+}
+
+/* ========================================
+   PRODUCT PRICE
+======================================== */
+
+.admin-page .admin-price {
+    color: #1d4ed8;
+    font-size: 1.1rem;
+}
+
+/* ========================================
+   COUPON LIST
+======================================== */
+
+.admin-page .admin-coupon-list {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.admin-page .admin-coupon-item {
+    background-color: #f8fafc;
+    color: #1e293b;
+
+    border-color: #e2e8f0;
+
+    padding: 15px;
+}
+
+/* ========================================
+   COUPON DISCOUNT
+======================================== */
+
+.admin-page .admin-discount {
+    color: #15803d;
+    white-space: nowrap;
+}
+
+/* ========================================
+   MOBILE RESPONSIVENESS
+======================================== */
+
+@media (max-width: 768px) {
+
+    .admin-page .admin-title {
+        font-size: 2rem;
+    }
+
+    .admin-page .admin-text {
+        font-size: 1rem;
+    }
+
+}
+
+@media (max-width: 576px) {
+
+    .admin-page .admin-button {
+        width: 100%;
+    }
+
+}

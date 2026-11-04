@@ -1,0 +1,116 @@
+/* ========================================
+   ABOUT PAGE
+======================================== */
+
+.about-page {
+    min-height: 80vh;
+    background: linear-gradient(
+        135deg,
+        #f1f5f9,
+        #e0f2fe
+    );
+
+    color: #1e293b;
+}
+
+/* ========================================
+   MAIN CONTENT CARD
+======================================== */
+
+.about-page .about-card {
+    background-color: #ffffff;
+    color: #1e293b;
+    border: 1px solid #e2e8f0;
+}
+
+/* ========================================
+   HEADINGS
+======================================== */
+
+.about-page .about-title {
+    color: #1d4ed8;
+    letter-spacing: -1px;
+}
+
+.about-page .about-heading {
+    color: #0f172a;
+}
+
+/* ========================================
+   PARAGRAPHS
+======================================== */
+
+.about-page .about-text {
+    color: #475569;
+    line-height: 1.8;
+    font-size: 1.05rem;
+}
+
+/* ========================================
+   PROJECT INFORMATION
+======================================== */
+
+.about-page .about-info-box {
+    background-color: #f1f5f9;
+    border: 1px solid #cbd5e1;
+}
+
+.about-page .about-info-box p {
+    color: #334155;
+    line-height: 1.7;
+}
+
+.about-page .about-info-box strong {
+    color: #0f172a;
+}
+
+/* ========================================
+   BOTTOM SECTION
+======================================== */
+
+.about-page .about-footer {
+    border-top: 1px solid #cbd5e1;
+}
+
+/* ========================================
+   CATALOG BUTTON
+======================================== */
+
+.about-page .about-button {
+    background-color: #2563eb;
+    color: #ffffff;
+    border: 2px solid #2563eb;
+    border-radius: 10px;
+
+    font-weight: 600;
+    padding: 12px 28px;
+
+    transition: all 0.2s ease;
+}
+
+.about-page .about-button:hover {
+    background-color: #1d4ed8;
+    border-color: #1d4ed8;
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+/* ========================================
+   MOBILE RESPONSIVENESS
+======================================== */
+
+@media (max-width: 768px) {
+
+    .about-page .about-title {
+        font-size: 2rem;
+    }
+
+    .about-page .about-text {
+        font-size: 1rem;
+    }
+
+    .about-page .about-info-box {
+        margin-top: 10px;
+    }
+
+}

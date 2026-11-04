@@ -1,5 +1,5 @@
-
 import { useState } from "react";
+import "./Admin.css";
 
 function Admin() {
 
@@ -28,7 +28,10 @@ function Admin() {
             price: Number(productPrice)
         };
 
-        setProducts([...products, newProduct]);
+        setProducts((currentProducts) => [
+            ...currentProducts,
+            newProduct
+        ]);
 
         // CLEAR PRODUCT FORM
 
@@ -48,7 +51,10 @@ function Admin() {
             discount: Number(couponDiscount)
         };
 
-        setCoupons([...coupons, newCoupon]);
+        setCoupons((currentCoupons) => [
+            ...currentCoupons,
+            newCoupon
+        ]);
 
         // CLEAR COUPON FORM
 
@@ -57,153 +63,172 @@ function Admin() {
     }
 
     return (
-        <main className="container py-5">
+        <main className="admin-page py-5">
 
-            {/* PAGE HEADING */}
+            <div className="container">
 
-            <div className="text-center mb-5">
-                <h1 className="display-5 fw-bold">
-                    Store Administration
-                </h1>
+                {/* PAGE HEADING */}
 
-                <p className="lead text-secondary">
-                    Manage your store products and coupons.
-                </p>
-            </div>
+                <div className="text-center mb-5">
 
-            <div className="row g-4 align-items-start">
+                    <h1 className="admin-title display-5 fw-bold">
+                        Store Administration
+                    </h1>
 
-                {/* PRODUCTS SECTION */}
+                    <p className="admin-text lead mt-3">
+                        Manage your store products and coupons.
+                    </p>
 
-                <section className="col-lg-6">
+                </div>
 
-                    <div className="bg-white rounded-4 shadow-sm p-4">
+                <div className="row g-4 align-items-start">
 
-                        <h2 className="h4 fw-bold mb-4">
-                            Add Products
-                        </h2>
+                    {/* PRODUCTS SECTION */}
 
-                        <form onSubmit={saveProduct}>
+                    <section className="col-lg-6">
 
-                            {/* PRODUCT TITLE */}
+                        {/* ADD PRODUCTS FORM */}
 
-                            <div className="mb-3">
-                                <label
-                                    htmlFor="productTitle"
-                                    className="form-label"
-                                >
-                                    Title
-                                </label>
+                        <div className="admin-panel rounded-4 shadow-sm p-4">
 
-                                <input
-                                    id="productTitle"
-                                    type="text"
-                                    className="form-control"
-                                    value={productTitle}
-                                    onChange={(event) =>
-                                        setProductTitle(event.target.value)
-                                    }
-                                    required
-                                />
-                            </div>
+                            <h2 className="admin-heading h4 fw-bold mb-4">
+                                Add Products
+                            </h2>
 
-                            {/* PRODUCT CATEGORY */}
+                            <form onSubmit={saveProduct}>
 
-                            <div className="mb-3">
-                                <label
-                                    htmlFor="productCategory"
-                                    className="form-label"
-                                >
-                                    Category
-                                </label>
+                                {/* PRODUCT TITLE */}
 
-                                <input
-                                    id="productCategory"
-                                    type="text"
-                                    className="form-control"
-                                    value={productCategory}
-                                    onChange={(event) =>
-                                        setProductCategory(event.target.value)
-                                    }
-                                    required
-                                />
-                            </div>
+                                <div className="mb-3">
 
-                            {/* PRODUCT PRICE */}
-
-                            <div className="mb-3">
-                                <label
-                                    htmlFor="productPrice"
-                                    className="form-label"
-                                >
-                                    Price ($)
-                                </label>
-
-                                <input
-                                    id="productPrice"
-                                    type="number"
-                                    className="form-control"
-                                    min="0"
-                                    step="0.01"
-                                    value={productPrice}
-                                    onChange={(event) =>
-                                        setProductPrice(event.target.value)
-                                    }
-                                    required
-                                />
-                            </div>
-
-                            {/* SAVE PRODUCT BUTTON */}
-
-                            <button
-                                type="submit"
-                                className="btn btn-primary"
-                            >
-                                Save Product
-                            </button>
-
-                        </form>
-
-                    </div>
-
-                    {/* PRODUCTS LIST */}
-
-                    <div className="mt-4">
-
-                        <h3 className="h5 fw-bold mb-3">
-                            Products List:
-                        </h3>
-
-                        {products.length === 0 ? (
-
-                            <p className="text-secondary">
-                                No products added yet.
-                            </p>
-
-                        ) : (
-
-                            <div className="row g-3">
-
-                                {products.map((product) => (
-
-                                    <div
-                                        className="col-sm-6"
-                                        key={product.id}
+                                    <label
+                                        htmlFor="productTitle"
+                                        className="admin-label form-label"
                                     >
+                                        Product Title
+                                    </label>
 
-                                        <div className="card h-100 shadow-sm">
+                                    <input
+                                        id="productTitle"
+                                        type="text"
+                                        className="admin-input form-control"
+                                        placeholder="Enter product title"
+                                        value={productTitle}
+                                        onChange={(event) =>
+                                            setProductTitle(event.target.value)
+                                        }
+                                        required
+                                    />
 
-                                            <div className="card-body">
+                                </div>
 
-                                                <span className="badge text-bg-primary mb-2">
+                                {/* PRODUCT CATEGORY */}
+
+                                <div className="mb-3">
+
+                                    <label
+                                        htmlFor="productCategory"
+                                        className="admin-label form-label"
+                                    >
+                                        Category
+                                    </label>
+
+                                    <input
+                                        id="productCategory"
+                                        type="text"
+                                        className="admin-input form-control"
+                                        placeholder="Enter product category"
+                                        value={productCategory}
+                                        onChange={(event) =>
+                                            setProductCategory(event.target.value)
+                                        }
+                                        required
+                                    />
+
+                                </div>
+
+                                {/* PRODUCT PRICE */}
+
+                                <div className="mb-4">
+
+                                    <label
+                                        htmlFor="productPrice"
+                                        className="admin-label form-label"
+                                    >
+                                        Price ($)
+                                    </label>
+
+                                    <input
+                                        id="productPrice"
+                                        type="number"
+                                        className="admin-input form-control"
+                                        placeholder="Enter product price"
+                                        min="0"
+                                        step="0.01"
+                                        value={productPrice}
+                                        onChange={(event) =>
+                                            setProductPrice(event.target.value)
+                                        }
+                                        required
+                                    />
+
+                                </div>
+
+                                {/* SAVE PRODUCT BUTTON */}
+
+                                <button
+                                    type="submit"
+                                    className="btn admin-button"
+                                >
+                                    Save Product
+                                </button>
+
+                            </form>
+
+                        </div>
+
+                        {/* PRODUCTS LIST */}
+
+                        <div className="admin-panel rounded-4 shadow-sm p-4 mt-4">
+
+                            <h3 className="admin-heading h5 fw-bold mb-3">
+                                Products List
+                            </h3>
+
+                            {products.length === 0 ? (
+
+                                <p className="admin-text mb-0">
+                                    No products added yet.
+                                </p>
+
+                            ) : (
+
+                                <div className="row g-3">
+
+                                    {products.map((product) => (
+
+                                        <div
+                                            className="col-sm-6"
+                                            key={product.id}
+                                        >
+
+                                            <div className="admin-product-card rounded-3 p-3 h-100">
+
+                                                {/* CATEGORY */}
+
+                                                <span className="admin-category-badge">
                                                     {product.category}
                                                 </span>
 
-                                                <h4 className="h5 fw-bold">
+                                                {/* TITLE */}
+
+                                                <h4 className="admin-heading h5 fw-bold mt-3">
                                                     {product.title}
                                                 </h4>
 
-                                                <p className="fw-bold text-primary mb-0">
+                                                {/* PRICE */}
+
+                                                <p className="admin-price fw-bold mb-0">
                                                     ${product.price.toFixed(2)}
                                                 </p>
 
@@ -211,129 +236,141 @@ function Admin() {
 
                                         </div>
 
-                                    </div>
+                                    ))}
 
-                                ))}
+                                </div>
 
-                            </div>
+                            )}
 
-                        )}
+                        </div>
 
-                    </div>
+                    </section>
 
-                </section>
+                    {/* COUPONS SECTION */}
 
-                {/* COUPONS SECTION */}
+                    <section className="col-lg-6">
 
-                <section className="col-lg-6">
+                        {/* ADD COUPONS FORM */}
 
-                    <div className="bg-white rounded-4 shadow-sm p-4">
+                        <div className="admin-panel rounded-4 shadow-sm p-4">
 
-                        <h2 className="h4 fw-bold mb-4">
-                            Add Coupons
-                        </h2>
+                            <h2 className="admin-heading h4 fw-bold mb-4">
+                                Add Coupons
+                            </h2>
 
-                        <form onSubmit={saveCoupon}>
+                            <form onSubmit={saveCoupon}>
 
-                            {/* COUPON CODE */}
+                                {/* COUPON CODE */}
 
-                            <div className="mb-3">
-                                <label
-                                    htmlFor="couponCode"
-                                    className="form-label"
-                                >
-                                    Code
-                                </label>
+                                <div className="mb-3">
 
-                                <input
-                                    id="couponCode"
-                                    type="text"
-                                    className="form-control"
-                                    value={couponCode}
-                                    onChange={(event) =>
-                                        setCouponCode(event.target.value)
-                                    }
-                                    required
-                                />
-                            </div>
-
-                            {/* COUPON DISCOUNT */}
-
-                            <div className="mb-3">
-                                <label
-                                    htmlFor="couponDiscount"
-                                    className="form-label"
-                                >
-                                    Discount (%)
-                                </label>
-
-                                <input
-                                    id="couponDiscount"
-                                    type="number"
-                                    className="form-control"
-                                    min="1"
-                                    max="100"
-                                    value={couponDiscount}
-                                    onChange={(event) =>
-                                        setCouponDiscount(event.target.value)
-                                    }
-                                    required
-                                />
-                            </div>
-
-                            {/* SAVE COUPON BUTTON */}
-
-                            <button
-                                type="submit"
-                                className="btn btn-primary"
-                            >
-                                Save Coupon
-                            </button>
-
-                        </form>
-
-                    </div>
-
-                    {/* COUPONS LIST */}
-
-                    <div className="mt-4">
-
-                        <h3 className="h5 fw-bold mb-3">
-                            Coupons List:
-                        </h3>
-
-                        {coupons.length === 0 ? (
-
-                            <p className="text-secondary">
-                                No coupons added yet.
-                            </p>
-
-                        ) : (
-
-                            <ul className="list-group">
-
-                                {coupons.map((coupon) => (
-
-                                    <li
-                                        key={coupon.id}
-                                        className="list-group-item d-flex justify-content-between"
+                                    <label
+                                        htmlFor="couponCode"
+                                        className="admin-label form-label"
                                     >
-                                        <span>{coupon.code}</span>
+                                        Coupon Code
+                                    </label>
 
-                                        <strong>
-                                            {coupon.discount}% OFF
-                                        </strong>
-                                    </li>
+                                    <input
+                                        id="couponCode"
+                                        type="text"
+                                        className="admin-input form-control"
+                                        placeholder="Enter coupon code"
+                                        value={couponCode}
+                                        onChange={(event) =>
+                                            setCouponCode(event.target.value)
+                                        }
+                                        required
+                                    />
 
-                                ))}
+                                </div>
 
-                            </ul>
+                                {/* COUPON DISCOUNT */}
 
-                        )}
+                                <div className="mb-4">
 
-                    </div>
+                                    <label
+                                        htmlFor="couponDiscount"
+                                        className="admin-label form-label"
+                                    >
+                                        Discount (%)
+                                    </label>
 
-                </section>
+                                    <input
+                                        id="couponDiscount"
+                                        type="number"
+                                        className="admin-input form-control"
+                                        placeholder="Enter discount percentage"
+                                        min="1"
+                                        max="100"
+                                        value={couponDiscount}
+                                        onChange={(event) =>
+                                            setCouponDiscount(event.target.value)
+                                        }
+                                        required
+                                    />
+
+                                </div>
+
+                                {/* SAVE COUPON BUTTON */}
+
+                                <button
+                                    type="submit"
+                                    className="btn admin-button"
+                                >
+                                    Save Coupon
+                                </button>
+
+                            </form>
+
+                        </div>
+
+                        {/* COUPONS LIST */}
+
+                        <div className="admin-panel rounded-4 shadow-sm p-4 mt-4">
+
+                            <h3 className="admin-heading h5 fw-bold mb-3">
+                                Coupons List
+                            </h3>
+
+                            {coupons.length === 0 ? (
+
+                                <p className="admin-text mb-0">
+                                    No coupons added yet.
+                                </p>
+
+                            ) : (
+
+                                <ul className="admin-coupon-list list-group">
+
+                                    {coupons.map((coupon) => (
+
+                                        <li
+                                            key={coupon.id}
+                                            className="admin-coupon-item list-group-item d-flex justify-content-between align-items-center gap-3"
+                                        >
+
+                                            <span className="fw-semibold">
+                                                {coupon.code}
+                                            </span>
+
+                                            <strong className="admin-discount">
+                                                {coupon.discount}% OFF
+                                            </strong>
+
+                                        </li>
+
+                                    ))}
+
+                                </ul>
+
+                            )}
+
+                        </div>
+
+                    </section>
+
+                </div>
 
             </div>
 

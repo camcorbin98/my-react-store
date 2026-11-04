@@ -1,0 +1,177 @@
+/* ========================================
+   CONTACT PAGE
+======================================== */
+
+.contact-page {
+    min-height: 80vh;
+
+    background: linear-gradient(
+        135deg,
+        #f1f5f9,
+        #e0f2fe
+    );
+
+    color: #1e293b;
+}
+
+/* ========================================
+   PAGE HEADING
+======================================== */
+
+.contact-page .contact-title {
+    color: #1d4ed8;
+    letter-spacing: -1px;
+}
+
+.contact-page .contact-heading {
+    color: #0f172a;
+}
+
+/* ========================================
+   CONTACT CARDS
+======================================== */
+
+.contact-page .contact-card {
+    background-color: #ffffff;
+    color: #1e293b;
+
+    border: 1px solid #e2e8f0;
+}
+
+/* ========================================
+   PARAGRAPHS
+======================================== */
+
+.contact-page .contact-text {
+    color: #475569;
+
+    line-height: 1.8;
+    font-size: 1.05rem;
+}
+
+.contact-page .contact-divider {
+    border-color: #cbd5e1;
+    opacity: 1;
+}
+
+/* ========================================
+   FORM LABELS
+======================================== */
+
+.contact-page .contact-label {
+    color: #1e293b;
+
+    font-weight: 600;
+    font-size: 0.95rem;
+
+    margin-bottom: 8px;
+}
+
+/* ========================================
+   FORM INPUTS
+======================================== */
+
+.contact-page .contact-input {
+    background-color: #ffffff;
+    color: #0f172a;
+
+    border: 1px solid #cbd5e1;
+    border-radius: 10px;
+
+    padding: 12px 15px;
+
+    font-size: 1rem;
+
+    transition: border-color 0.2s ease,
+                box-shadow 0.2s ease;
+}
+
+.contact-page .contact-input::placeholder {
+    color: #64748b;
+    opacity: 1;
+}
+
+.contact-page .contact-input:focus {
+    background-color: #ffffff;
+    color: #0f172a;
+
+    border-color: #2563eb;
+
+    box-shadow: 0 0 0 3px rgba(
+        37,
+        99,
+        235,
+        0.15
+    );
+
+    outline: none;
+}
+
+/* ========================================
+   SUBMIT BUTTON
+======================================== */
+
+.contact-page .contact-button {
+    background-color: #2563eb;
+    color: #ffffff;
+
+    border: 2px solid #2563eb;
+    border-radius: 10px;
+
+    font-weight: 600;
+
+    padding: 12px 28px;
+
+    transition: all 0.2s ease;
+}
+
+.contact-page .contact-button:hover {
+    background-color: #1d4ed8;
+    border-color: #1d4ed8;
+
+    color: #ffffff;
+
+    transform: translateY(-2px);
+}
+
+/* ========================================
+   FORM SUCCESS MESSAGE
+======================================== */
+
+.contact-page .contact-alert {
+    background-color: #e0f2fe;
+    color: #075985;
+
+    border: 1px solid #7dd3fc;
+
+    font-weight: 500;
+    line-height: 1.6;
+}
+
+/* ========================================
+   MOBILE RESPONSIVENESS
+======================================== */
+
+@media (max-width: 768px) {
+
+    .contact-page .contact-title {
+        font-size: 2rem;
+    }
+
+    .contact-page .contact-text {
+        font-size: 1rem;
+    }
+
+    .contact-page .contact-card {
+        margin-bottom: 10px;
+    }
+
+}
+
+@media (max-width: 576px) {
+
+    .contact-page .contact-button {
+        width: 100%;
+    }
+
+}

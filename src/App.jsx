@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import GlobalProvider from "./state/globalProvider";
 
 import Home from "./pages/Home";
+import Cart from "./pages/Cart";
 import About from "./pages/About";
 import Admin from "./pages/Admin";
 import Catalog from "./pages/Catalog";
@@ -38,6 +39,7 @@ function App() {
                             <Route path="/contact" element={<Contact />} />
                             <Route path="/catalog" element={<Catalog />} />
                             <Route path="/admin" element={<Admin />} />
+                            <Route path="/cart" element={<Cart />} />
                             <Route path="*" element={<NotFound />} />
                         </Routes>
 

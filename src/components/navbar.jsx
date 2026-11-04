@@ -1,15 +1,21 @@
-
 import "./navbar.css";
 
 import { useState, useContext } from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
+import { IconShoppingCart } from "@tabler/icons-react";
 import GlobalContext from "../state/globalContext";
 
 function Navbar() {
 
     // ACCESS GLOBAL STATE
 
-    const { user } = useContext(GlobalContext);
+    const { user, cart } = useContext(GlobalContext);
+
+    // CALCULATE TOTAL NUMBER OF ITEMS IN CART
+
+    const cartCount = cart.reduce((total, product) => {
+        return total + Number(product.quantity);
+    }, 0);
 
     // MOBILE MENU STATE
 
@@ -140,6 +146,27 @@ function Navbar() {
                     </span>
 
                 </div>
+
+                {/* SHOPPING CART */}
+
+                <Link
+                    to="/cart"
+                    className="btn btn-outline-primary ms-4 d-flex align-items-center gap-2"
+                    onClick={closeMenu}
+                    aria-label={`View shopping cart with ${cartCount} items`}
+                >
+
+                    {/* SHOPPING CART ICON */}
+
+                    <IconShoppingCart size={24} />
+
+                    {/* CART ITEM COUNT */}
+
+                    <span className="badge bg-primary text-white">
+                        {cartCount}
+                    </span>
+
+                </Link>
 
             </div>
 

@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import GlobalContext from "./globalContext";
 
@@ -15,8 +14,18 @@ function GlobalProvider(props) {
 
     // ADD PRODUCT TO CART
 
-    function addProductToCart() {
-        // Logic to add product to cart
+    function addProductToCart(product, quantity = 1) {
+
+        const newProduct = {
+            ...product,
+            quantity: Number(quantity)
+        };
+
+        setCart((currentCart) => [
+            ...currentCart,
+            newProduct
+        ]);
+
     }
 
     // CLEAR CART
@@ -27,8 +36,12 @@ function GlobalProvider(props) {
 
     // REMOVE PRODUCT FROM CART
 
-    function removeProductFromCart() {
-        // Logic to remove product from cart
+    function removeProductFromCart(index) {
+
+        setCart((currentCart) =>
+            currentCart.filter((product, itemIndex) => itemIndex !== index)
+        );
+
     }
 
     return (

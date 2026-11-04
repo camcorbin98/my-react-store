@@ -1,9 +1,13 @@
-
 import { useState } from "react";
+import "./Contact.css";
 
 function Contact() {
 
+    // FORM SUBMISSION STATE
+
     const [submitted, setSubmitted] = useState(false);
+
+    // HANDLE FORM SUBMISSION
 
     function handleSubmit(event) {
         event.preventDefault();
@@ -11,164 +15,190 @@ function Contact() {
     }
 
     return (
-        <main className="container py-5">
+        <main className="contact-page py-5">
 
-            {/* PAGE HEADING */}
+            <div className="container">
 
-            <div className="text-center mb-5">
-                <h1 className="display-5 fw-bold">
-                    Contact Us
-                </h1>
+                {/* PAGE HEADING */}
 
-                <p className="lead text-secondary">
-                    Have a question about My React Store?
-                    We'd love to hear from you!
-                </p>
-            </div>
+                <div className="text-center mb-5">
 
-            <div className="row g-4 justify-content-center">
+                    <h1 className="contact-title display-5 fw-bold">
+                        Contact Us
+                    </h1>
 
-                {/* CONTACT INFORMATION */}
+                    <p className="contact-text lead mt-3">
+                        Have a question about My React Store?
+                        We'd love to hear from you!
+                    </p>
 
-                <div className="col-md-4">
-                    <div className="bg-white rounded-4 shadow-sm p-4 h-100">
-
-                        <h2 className="h4 fw-bold mb-4">
-                            Get in Touch
-                        </h2>
-
-                        <p className="text-secondary">
-                            My React Store is a web development
-                            project created using React.
-                        </p>
-
-                        <hr />
-
-                        <h3 className="h6 fw-bold">
-                            Project Creator
-                        </h3>
-
-                        <p className="text-secondary">
-                            Cameron Corbin
-                        </p>
-
-                        <h3 className="h6 fw-bold">
-                            Established
-                        </h3>
-
-                        <p className="text-secondary">
-                            2026
-                        </p>
-
-                        <h3 className="h6 fw-bold">
-                            Course Information
-                        </h3>
-
-                        <p className="text-secondary">
-                            Cohort #71 | Course #109
-                        </p>
-
-                    </div>
                 </div>
 
-                {/* CONTACT FORM */}
+                <div className="row g-4 justify-content-center">
 
-                <div className="col-md-8">
-                    <div className="bg-white rounded-4 shadow-sm p-4 p-md-5 h-100">
+                    {/* CONTACT INFORMATION */}
 
-                        <h2 className="h4 fw-bold mb-3">
-                            Send a Message
-                        </h2>
+                    <div className="col-md-4">
 
-                        <p className="text-secondary small">
-                            This is a demonstration form.
-                            Messages are not actually sent.
-                        </p>
+                        <div className="contact-card rounded-4 shadow-sm p-4 h-100">
 
-                        <form onSubmit={handleSubmit}>
+                            <h2 className="contact-heading h4 fw-bold mb-4">
+                                Get in Touch
+                            </h2>
 
-                            {/* NAME */}
+                            <p className="contact-text">
+                                My React Store is a web development
+                                project created using React.
+                            </p>
 
-                            <div className="mb-3">
-                                <label
-                                    htmlFor="contactName"
-                                    className="form-label"
-                                >
-                                    Your Name
-                                </label>
+                            <hr className="contact-divider" />
 
-                                <input
-                                    type="text"
-                                    className="form-control"
-                                    id="contactName"
-                                    placeholder="Enter your name"
-                                    required
-                                />
-                            </div>
+                            {/* PROJECT CREATOR */}
 
-                            {/* EMAIL */}
+                            <h3 className="contact-heading h6 fw-bold">
+                                Project Creator
+                            </h3>
 
-                            <div className="mb-3">
-                                <label
-                                    htmlFor="contactEmail"
-                                    className="form-label"
-                                >
-                                    Email Address
-                                </label>
+                            <p className="contact-text">
+                                Cameron Corbin
+                            </p>
 
-                                <input
-                                    type="email"
-                                    className="form-control"
-                                    id="contactEmail"
-                                    placeholder="Enter your email"
-                                    required
-                                />
-                            </div>
+                            {/* ESTABLISHED */}
 
-                            {/* MESSAGE */}
+                            <h3 className="contact-heading h6 fw-bold">
+                                Established
+                            </h3>
 
-                            <div className="mb-4">
-                                <label
-                                    htmlFor="contactMessage"
-                                    className="form-label"
-                                >
-                                    Your Message
-                                </label>
+                            <p className="contact-text">
+                                2026
+                            </p>
 
-                                <textarea
-                                    className="form-control"
-                                    id="contactMessage"
-                                    rows="5"
-                                    placeholder="Write your message here..."
-                                    required
-                                />
-                            </div>
+                            {/* COURSE INFORMATION */}
 
-                            {/* SUBMIT BUTTON */}
+                            <h3 className="contact-heading h6 fw-bold">
+                                Course Information
+                            </h3>
 
-                            <button
-                                type="submit"
-                                className="btn btn-primary"
-                            >
-                                Submit Demo Form
-                            </button>
+                            <p className="contact-text">
+                                Cohort #71 | Course #109
+                            </p>
 
-                        </form>
-
-                        {/* FORM FEEDBACK */}
-
-                        {submitted && (
-                            <div
-                                className="alert alert-info mt-4"
-                                role="status"
-                            >
-                                Thank you for testing the form!
-                                This is a demonstration, so no
-                                message was sent.
-                            </div>
-                        )}
+                        </div>
 
                     </div>
+
+                    {/* CONTACT FORM */}
+
+                    <div className="col-md-8">
+
+                        <div className="contact-card rounded-4 shadow-sm p-4 p-md-5 h-100">
+
+                            <h2 className="contact-heading h4 fw-bold mb-3">
+                                Send a Message
+                            </h2>
+
+                            <p className="contact-text small mb-4">
+                                This is a demonstration form.
+                                Messages are not actually sent.
+                            </p>
+
+                            <form onSubmit={handleSubmit}>
+
+                                {/* NAME */}
+
+                                <div className="mb-3">
+
+                                    <label
+                                        htmlFor="contactName"
+                                        className="contact-label form-label"
+                                    >
+                                        Your Name
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        className="contact-input form-control"
+                                        id="contactName"
+                                        placeholder="Enter your name"
+                                        autoComplete="name"
+                                        required
+                                    />
+
+                                </div>
+
+                                {/* EMAIL */}
+
+                                <div className="mb-3">
+
+                                    <label
+                                        htmlFor="contactEmail"
+                                        className="contact-label form-label"
+                                    >
+                                        Email Address
+                                    </label>
+
+                                    <input
+                                        type="email"
+                                        className="contact-input form-control"
+                                        id="contactEmail"
+                                        placeholder="Enter your email"
+                                        autoComplete="email"
+                                        required
+                                    />
+
+                                </div>
+
+                                {/* MESSAGE */}
+
+                                <div className="mb-4">
+
+                                    <label
+                                        htmlFor="contactMessage"
+                                        className="contact-label form-label"
+                                    >
+                                        Your Message
+                                    </label>
+
+                                    <textarea
+                                        className="contact-input form-control"
+                                        id="contactMessage"
+                                        rows={5}
+                                        placeholder="Write your message here..."
+                                        required
+                                    />
+
+                                </div>
+
+                                {/* SUBMIT BUTTON */}
+
+                                <button
+                                    type="submit"
+                                    className="btn contact-button"
+                                >
+                                    Submit Demo Form
+                                </button>
+
+                            </form>
+
+                            {/* FORM FEEDBACK */}
+
+                            {submitted && (
+
+                                <div
+                                    className="contact-alert rounded-3 p-3 mt-4"
+                                    role="status"
+                                >
+                                    Thank you for testing the form!
+                                    This is a demonstration, so no
+                                    message was sent.
+                                </div>
+
+                            )}
+
+                        </div>
+
+                    </div>
+
                 </div>
 
             </div>
